@@ -1,40 +1,14 @@
-console.log(businesses)
-//business Name, state, city, zipcode,
+const monthlyRainfall = [23, 13, 27, 20, 20, 31, 33, 26, 19, 12, 14, 12, 10]
+
+const totalRainfall = monthlyRainfall.reduce((totalRain, currentMonthRain) => totalRain + currentMonthRain) 
+
+console.log(totalRainfall)
 
 
 
 
+const words = ["The", "quick", "brown", "fox", "jumped", "over", "the", "lazy", "dog"]
 
-// Array to contain all the New York businesses
-const newYorkBusinesses = businesses.filter(business => {
-    console.log(business.addressStateCode)
-    let inNewYork = false
+const sentence = words.reduce((fullSentence, currentWord) => fullSentence + currentWord)
 
-    if (business.addressStateCode === "NY") {
-        inNewYork = true
-    }
-
-    return inNewYork
-})
-const manufacturingBusinesses = businesses.filter(business => business.companyIndustry === "Manufacturing")
-//   console.log(newYorkBusinesses)
-const outEl = document.querySelector("#output")
-outEl.innerHTML = "<h1>Active Businesses</h1>"
-let zipCodeProperty = "addressZipCode"
-manufacturingBusinesses.forEach(business => {
-    outEl.innerHTML += `
-    <h2>${business.companyName}</h2>
-    <section>
-      ${business.addressFullStreet}
-      <section>
-      ${business.addressCity}  ${business["addressStateCode"]} 
-      ${business[zipCodeProperty]}
-       </section> 
-      </section>  
-  `
-    outEl.innerHTML += "<hr/>"
-});
-
-
-
-
+console.log(sentence)
